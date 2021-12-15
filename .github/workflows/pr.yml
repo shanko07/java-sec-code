@@ -53,4 +53,3 @@ jobs:
           blackduck.api.token: ${{ secrets.BLACKDUCK_API_TOKEN }}
           args: >
             --detect.blackduck.scan.mode=RAPID
-            --detect.policy.check.fail.on.severities="BLOCKER"
