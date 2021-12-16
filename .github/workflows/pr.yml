@@ -34,15 +34,15 @@ jobs:
       - name: Maven Build
         run: mvn clean package -DskipTests
         
-      - name: Install SAST Rapid Scan
-        run: |
-          curl -fLsS --user $COV_USER:$COVERITY_PASSPHRASE -o /tmp/sigma $COV_URL/downloadFile.htm?fn=sigma
-          chmod +x /tmp/sigma
+      #- name: Install SAST Rapid Scan
+      #  run: |
+      #    curl -fLsS --user $COV_USER:$COVERITY_PASSPHRASE -o /tmp/sigma $COV_URL/downloadFile.htm?fn=sigma
+      #    chmod +x /tmp/sigma
           
-      - name: Rapid Scan (SAST)
-        run: |
-          /tmp/sigma analyze --format JSON .
-          cat sigma-results.json
+      #- name: Rapid Scan (SAST)
+      #  run: |
+      #    /tmp/sigma analyze --format JSON .
+      #    cat sigma-results.json
         
         
       - name: Rapid Scan (SCA)
